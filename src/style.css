@@ -1,0 +1,87 @@
+@use postcss-mixins;
+@use postcss-simple-vars;
+@use postcss-preset-env(stage: 0);
+
+$rlh: 1.618;
+$breakpoint: screen and (min-width: 1025px);
+$primary-font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif !important;
+$color-body-text: hsl(227, 12%, 85%);
+$color-new-fcc-toggler-btn-bg: hsl(227, 12%, 30%);
+
+
+@define-mixin button {
+  appearance: none;
+  outline: none;
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: center;
+  vertical-align: top;
+  position: relative;
+  font-size: 1rem;
+  line-height: 1.5;
+  height: 2.5em;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  box-shadow: none;
+  padding-bottom: calc(0.5em - 1px);
+  padding-left: calc(0.75em - 1px);
+  padding-right: calc(0.75em - 1px);
+  padding-top: calc(0.5em - 1px);
+}
+
+*, ::before, ::after {
+  box-sizing: border-box;
+}
+
+html, body { 
+  min-height: 100%; 
+  line-height: $rlh;
+}
+
+body {
+  font-family: $primary-font-family;
+  font-size: 100%;
+  margin: 0;
+}
+
+/* vertical rhythm for block-level elements */
+h1, h2, ul, ol, p,
+pre {
+  margin-bottom: calc(1rem * $rlh);
+}
+
+a {
+  text-decoration: none;
+}
+
+
+#custom_fcc_foldout_toggler {
+  @mixin button;
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  z-index: 500;
+  display: none;
+  cursor: pointer;
+  color: $color-body-text;
+  background: $color-new-fcc-toggler-btn-bg;
+  transition: all .2s;
+
+  & svg {
+    height: 1.1em;
+    fill: currentColor;
+    margin-right: 0.5ch;
+  }
+
+  &:hover, &:active {
+    color: white;
+  }
+
+  &.is-open {
+    color: hsl(120, 100%, 50%);
+  }
+
+  @media $breakpoint {
+    display: inline-flex;
+  }
+}
