@@ -4,10 +4,9 @@
 
 $rlh: 1.618;
 $breakpoint: screen and (min-width: 1025px);
-$primary-font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif !important;
-$color-body-text: hsl(227, 12%, 85%);
+$font-family-body: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif !important;
+$color-body-text: hsl(0, 0%, 20%);
 $color-new-fcc-toggler-btn-bg: hsl(227, 12%, 30%);
-
 
 @define-mixin button {
   appearance: none;
@@ -29,30 +28,46 @@ $color-new-fcc-toggler-btn-bg: hsl(227, 12%, 30%);
   padding-top: calc(0.5em - 1px);
 }
 
-*, ::before, ::after {
-  box-sizing: border-box;
-}
+/* Set default box-sizing */
+html { box-sizing: border-box; }
+*, *::before, *::after { box-sizing: inherit; }
 
-html, body { 
-  min-height: 100%; 
-  line-height: $rlh;
+html {
+  background-color: white;
+  font-size: 16px;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 body {
-  font-family: $primary-font-family;
-  font-size: 100%;
-  margin: 0;
+  color: $color-body-text;
+  font-family: $font-family-body;
+  font-size: 1em;
+  font-weight: 400;
+  line-height: $rlh;
 }
 
-/* vertical rhythm for block-level elements */
-h1, h2, ul, ol, p,
-pre {
-  margin-bottom: calc(1rem * $rlh);
+html, body { 
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
 }
 
 a {
+  color: #3273dc;
+  cursor: pointer;
   text-decoration: none;
+  &:hover {
+    color: #363636;
+  }
 }
+
+/* vertical rhythm for block-level elements */
+h1, h2, ul, ol, p {
+  margin-bottom: calc(1rem * $rlh);
+}
+
+
 
 
 #custom_fcc_foldout_toggler {
