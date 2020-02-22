@@ -1,13 +1,29 @@
 - const svgPwrSymbol = `<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' preserveAspectRatio='xMinYMin meet'><path fill='currentColor' d='M136.68,123.21A34.59,34.59,0,0,0,91.31,71a251.26,251.26,0,1,0,327.85-1.32,34.59,34.59,0,0,0-44.95,52.6,181.94,181.94,0,0,1,63.86,138.49c0,100.39-81.68,182.07-182.07,182.07S73.93,361.13,73.93,260.74A182.09,182.09,0,0,1,136.68,123.21Z'></path><path fill='currentColor' d='M290.59,277V34.59a34.59,34.59,0,0,0-69.19,0V277A34.59,34.59,0,1,0,290.59,277Z'></path></svg>`;
 
 main#main
-  h1#title #title
+  h1#title
+    svg(viewBox='0 0 600 130' width='100%')
+      path(id='path-title' fill='none' d='M 0 130, Q 300 -20, 600 130')
+      text(fill='currentColor' x='4%' style='font-size:2.5em;')
+        textPath(href='#path-title' textLength='96.5%' lengthAdjust='spacingAndGlyphs') FERNANDO SOR
+      text(fill='currentColor' x='20%' y='98%' textLength='60%' lengthAdjust='spacingAndGlyphs' style='font-size:1em;') Guitarist and Composer
+
   div#img-div
-    img#image(src="https://via.placeholder.com/500x300.png?text=%23image+placeholder")
-    p#img-caption #img-caption
+    img#image(src='https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Fernando_Sor.jpg/549px-Fernando_Sor.jpg' alt='Lithographed painting of Fernando Sor, c. 1825')
+    p#img-caption Lithographed painting of Fernando Sor, c. 1825
   
   div#tribute-info
-    p #tribute-info
-    a#tribute-link(href="#" target="_blank" rel="noopener noreferrer") #tribute link
-
+    ul.timeline
+      li #[span.date 1778] #[span.detail Born in Barcelona and distinguished himself early as a prodigious musical talent, having been exposed to Italian opera by his father and tutored in violin and guitar.]
+      li #[span.date c.1790] #[span.detail Sent to study music at the #[em Montserrat Escolonia] after the death of his father, where he received vocal and theoretical training in harmony, counterpoint and composition, further instruction in violin, and studies in violincello and organ.]
+      li #[span.date c.1796] #[span.detail Accepted an army commission where he also had time to pursue his musical interests through composing his first opera and giving performances on guitar and piano. Succesive posts in Madrid, Barcelona, and Andalusia from supportive patrons further spread his reputaion as a performer and composer, allowing him to produce many more works and further his musical craft.]
+      li #[span.date 1808] #[span.detail Served in the Spanish resistance upon Napoleon's invasion and composed several nationalistic and patriotic songs; however, after the French retook Madrid, he accepted an administrative post with the occupation hoping to preserve Spain from complete ruin.]
+      li #[span.date 1813] #[span.detail Fled to Paris, fearing retribution from fellow countrymen after the French army was ultimately defeated. Upon arrival, he found that his compositions were already in demand, and he gained significant renown as a virtuoso guitarist and composer for the instrument. His operas, however, were not well-received there.]
+      li #[span.date 1815] #[span.detail Moved to London after the Parisian rejection of his operas and gained considerable fame there as a guitarist, gave guitar and voice lessons, and wrote successful ballets.]
+      li #[span.date 1823] #[span.detail Travelled to Moscow with his successful ballet, and gave concerts all around Europe.]
+      li #[span.date 1827] #[span.detail Retired to Paris, where he composed the majority of his guitar works, many of which are studied and performed to this day and highly respected for their pedigogical value and musical quality.]
+      li #[span.date 1839] #[span.detail Died in Paris, two years after the passing of his daughter which sent him into a deep depression. His last work was a mass composed in her honor.]
+      
+    p.more-info To learn more about this incredibly significant guitarist, you can visit his #[a#tribute-link(href="https://en.wikipedia.org/wiki/Fernando_Sor" target="_blank" rel="noopener noreferrer") Wikipedia page] for general information and links to further resources.
+    
 button#custom_fcc_foldout_toggler !{svgPwrSymbol} TEST

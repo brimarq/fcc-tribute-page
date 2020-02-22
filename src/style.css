@@ -4,9 +4,9 @@
 
 $rlh: 1.618;
 $breakpoint: screen and (min-width: 1025px);
-$font-family-body: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif !important;
-$color-body-text: hsl(0, 0%, 20%);
-$color-new-fcc-toggler-btn-bg: hsl(227, 12%, 30%);
+$font-family-body: 'Open Sans', sans-serif;
+$font-family-title: 'Diplomata SC';
+$color-body-text: hsl(22, 7%, 40%);
 
 @define-mixin button {
   appearance: none;
@@ -33,10 +33,10 @@ html { box-sizing: border-box; }
 *, *::before, *::after { box-sizing: inherit; }
 
 html {
-  background-color: white;
   font-size: 16px;
   overflow-x: hidden;
   overflow-y: scroll;
+  background: linear-gradient(to right, hsl(35, 46%, 83%), hsl(35, 46%, 93%) 40% 60%, hsl(35, 46%, 83%));
 }
 
 body {
@@ -50,25 +50,89 @@ body {
 html, body { 
   margin: 0;
   padding: 0;
-  min-height: 100vh;
+  /* min-height: 100vh; */
 }
 
 a {
-  color: #3273dc;
+  color: 	hsl(201, 72%, 31%);
   cursor: pointer;
   text-decoration: none;
   &:hover {
-    color: #363636;
+    color: 	hsl(201, 72%, 41%);
   }
 }
 
 /* vertical rhythm for block-level elements */
-h1, h2, ul, ol, p {
+h1, ul, p {
   margin-bottom: calc(1rem * $rlh);
 }
 
+#main {
+  display: flex;
+  flex-direction: column;
+  max-width: 900px;
+  margin: auto;
+  padding: 1em;
+}
 
+#title {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin: 1em auto 0.5em auto;
+  height: auto;
+  width: 100%;
+  max-width: 500px;
+  font-family: $font-family-title;
+  font-weight: 400;
+}
 
+#img-div {
+  position: relative;
+  margin: auto;
+
+  & img#image {
+    position: relative;
+    display: block;
+    height: auto;
+    width: 100%;
+    max-width: 500px;
+    border-radius: 50%;
+    border: 1px solid $color-body-text;
+  }
+
+  & #img-caption {
+    text-align: center;
+    font-style: italic;
+    font-size: 0.75em;
+  }
+}
+
+ul.timeline {
+  list-style: none;
+  padding: 0;
+
+  & li {
+    margin-bottom: calc(1rem * $rlh);
+  }
+
+  & .date, & .detail {
+    display: block;
+    text-align: center;
+  }
+
+  & .date {
+    text-align: center;
+    font-size: 1.2em;
+    font-family: $font-family-title;
+  }
+}
+
+p.more-info {
+  text-align: center;
+  font-style: italic;
+  font-size: 0.8em;
+}
 
 #custom_fcc_foldout_toggler {
   @mixin button;
@@ -78,8 +142,8 @@ h1, h2, ul, ol, p {
   z-index: 500;
   display: none;
   cursor: pointer;
-  color: $color-body-text;
-  background: $color-new-fcc-toggler-btn-bg;
+  color: hsl(0, 0%, 65%);
+  background: hsla(0, 0%, 0%, 0.7);
   transition: all .2s;
 
   & svg {
@@ -88,7 +152,7 @@ h1, h2, ul, ol, p {
   }
 
   &:hover, &:active {
-    color: white;
+    color: hsl(0, 0%, 90%);
   }
 
   &.is-open {

@@ -66,7 +66,7 @@ module.exports = {
         head: {
           links: [
             { rel: "stylesheet", href: "https://unpkg.com/normalize.css@8.0.1/normalize.css"},
-            // { rel: "stylesheet", href: "https://fonts.googleapis.com/css?family=Lato|Montserrat:800|Fira+Code&display=swap" }
+            { rel: "stylesheet", href: "https://fonts.googleapis.com/css?family=Diplomata+SC|Open+Sans&display=swap" }
           ],
           scripts: [
             // { defer: true, src: 'https://use.fontawesome.com/releases/v5.3.1/js/all.js' }
