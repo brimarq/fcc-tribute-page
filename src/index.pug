@@ -1,12 +1,21 @@
 - const svgPwrSymbol = `<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' preserveAspectRatio='xMinYMin meet'><path fill='currentColor' d='M136.68,123.21A34.59,34.59,0,0,0,91.31,71a251.26,251.26,0,1,0,327.85-1.32,34.59,34.59,0,0,0-44.95,52.6,181.94,181.94,0,0,1,63.86,138.49c0,100.39-81.68,182.07-182.07,182.07S73.93,361.13,73.93,260.74A182.09,182.09,0,0,1,136.68,123.21Z'></path><path fill='currentColor' d='M290.59,277V34.59a34.59,34.59,0,0,0-69.19,0V277A34.59,34.59,0,1,0,290.59,277Z'></path></svg>`;
 
 main#main
-  h1#title
-    svg(viewBox='0 0 600 130' width='100%')
-      path(id='path-title' fill='none' d='M 0 130, Q 300 -20, 600 130')
-      text(fill='currentColor' x='4%' style='font-size:2.5em;')
-        textPath(href='#path-title' textLength='96.5%' lengthAdjust='spacingAndGlyphs') FERNANDO SOR
-      text(fill='currentColor' x='20%' y='98%' textLength='60%' lengthAdjust='spacingAndGlyphs' style='font-size:1em;') Guitarist and Composer
+  h1#title 
+    span(style="display:block;") FERNANDO SOR
+    span(style="display:block; font-size:.5em;") Guitarist and Composer
+  //- Chrome, Firefox, and Safari will not render the svg text-on-path consistently 
+  //- accross all the browsers. FF and Safari would not render a quadratic bezier 
+  //- curve path. Changing to a cubic curve path fixed that; but, Safari now ignores the 
+  //- textLength property and will not compress the font in the available space. 
+  //- Best solution is to turn font characters themselves into paths to incorporate them 
+  //- into the svg, but that is beyond the scope of this project. 
+  //- h1#title
+  //-   svg(viewBox='0 0 600 130' width='100%')
+  //-     path(id='path-title' fill='none' d='M 0,130 C 200,30 400,30 600,130')
+  //-     text(fill='currentColor' x='52%' style='font-size:2.5em;text-align:center;text-anchor:middle;'  textLength='95%' lengthAdjust='spacingAndGlyphs')
+  //-       textPath(href='#path-title') FERNANDO SOR
+  //-     text(fill='currentColor' x='50%' y='98%' textLength='60%' lengthAdjust='spacingAndGlyphs' style='font-size:1em;text-align:center;text-anchor:middle;') Guitarist and Composer
 
   div#img-div
     img#image(src='https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Fernando_Sor.jpg/549px-Fernando_Sor.jpg' alt='Lithographed painting of Fernando Sor, c. 1825')

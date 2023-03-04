@@ -3,9 +3,12 @@
 @use postcss-preset-env(stage: 0);
 
 $rlh: 1.618;
-$breakpoint: screen and (min-width: 1025px);
-$font-family-body: 'Open Sans', sans-serif;
-$font-family-title: 'Diplomata SC';
+$breakpoint: screen and
+  (
+    min-width: 1025px,
+  );
+$font-family-body: "Open Sans", sans-serif;
+$font-family-title: "Diplomata SC";
 $color-body-text: hsl(22, 7%, 40%);
 
 @define-mixin button {
@@ -29,14 +32,25 @@ $color-body-text: hsl(22, 7%, 40%);
 }
 
 /* Set default box-sizing */
-html { box-sizing: border-box; }
-*, *::before, *::after { box-sizing: inherit; }
+html {
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
 
 html {
   font-size: 16px;
   overflow-x: hidden;
   overflow-y: scroll;
-  background: linear-gradient(to right, hsl(35, 46%, 83%), hsl(35, 46%, 93%) 40% 60%, hsl(35, 46%, 83%));
+  background: linear-gradient(
+    to right,
+    hsl(35, 46%, 83%),
+    hsl(35, 46%, 93%) 40% 60%,
+    hsl(35, 46%, 83%)
+  );
 }
 
 body {
@@ -47,23 +61,26 @@ body {
   line-height: $rlh;
 }
 
-html, body { 
+html,
+body {
   margin: 0;
   padding: 0;
   /* min-height: 100vh; */
 }
 
 a {
-  color: 	hsl(201, 72%, 31%);
+  color: hsl(201, 72%, 31%);
   cursor: pointer;
   text-decoration: none;
   &:hover {
-    color: 	hsl(201, 72%, 41%);
+    color: hsl(201, 72%, 41%);
   }
 }
 
 /* vertical rhythm for block-level elements */
-h1, ul, p {
+h1,
+ul,
+p {
   margin-bottom: calc(1rem * $rlh);
 }
 
@@ -82,9 +99,10 @@ h1, ul, p {
   margin: 1em auto 0.5em auto;
   height: auto;
   width: 100%;
-  max-width: 500px;
+  /* max-width: 500px; */
   font-family: $font-family-title;
   font-weight: 400;
+  font-size: 2.5em;
 }
 
 #img-div {
@@ -116,7 +134,8 @@ ul.timeline {
     margin-bottom: calc(1rem * $rlh);
   }
 
-  & .date, & .detail {
+  & .date,
+  & .detail {
     display: block;
     text-align: center;
   }
@@ -144,14 +163,15 @@ p.more-info {
   cursor: pointer;
   color: hsl(0, 0%, 65%);
   background: hsla(0, 0%, 0%, 0.7);
-  transition: all .2s;
+  transition: all 0.2s;
 
   & svg {
     height: 1.1em;
     margin-right: 0.5ch;
   }
 
-  &:hover, &:active {
+  &:hover,
+  &:active {
     color: hsl(0, 0%, 90%);
   }
 
